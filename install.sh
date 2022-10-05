@@ -13,7 +13,7 @@ echo "Installing NPM and PM2..."
 apt update
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
 nvm install 17
 npm install pm2 --location=global
 
@@ -40,7 +40,7 @@ wget -O /home/geth/mainnet.zip https://github.com/binance-chain/bsc/releases/lat
 
 # Unzip mainnet
 echo "Downloading the latest BSC mainnet config..."
-unzip home/geth/mainnet.zip
+unzip /home/geth/mainnet.zip
 
 # Initialize the geth. 
 echo "Initializing the geth..."
