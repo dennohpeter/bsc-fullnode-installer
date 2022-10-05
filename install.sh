@@ -5,8 +5,8 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Start.
-echo "BSC Fullnode Installer - GitHub: @tarik0"
-echo "Credits - PhatJay for those steps."
+echo "BSC Fullnode Installer - GitHub: @dennohpeter"
+echo "Credits - PhatJay and tarik0 for those steps."
 
 # Download NPM and PM2.
 echo "Installing NPM and PM2..."
@@ -15,7 +15,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 nvm install 17
-npm install pm2 -g
+npm install pm2 --location=global
 
 # Download unzip.
 echo "Installing unzip..."
