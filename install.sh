@@ -38,6 +38,10 @@ chmod +x /home/geth/start.sh
 echo "Downloading the latest BSC mainnet config..."
 wget -O /home/geth/mainnet.zip https://github.com/binance-chain/bsc/releases/latest/download/mainnet.zip
 
+# Unzip mainnet
+echo "Downloading the latest BSC mainnet config..."
+unzip home/geth/mainnet.zip
+
 # Initialize the geth. 
 echo "Initializing the geth..."
 /home/geth/geth_linux --datadir mainnet init genesis.json
