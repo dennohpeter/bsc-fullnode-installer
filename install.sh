@@ -31,7 +31,7 @@ wget -O /home/geth/geth_linux https://github.com/binance-chain/bsc/releases/late
 chmod +x /home/geth/geth_linux
 
 # Create the start.sh.
-echo "./geth_linux --config ./config.toml --datadir ./mainnet --cache 18000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 --ws --syncmode=snap --snapshot=false" >  /home/geth/start.sh
+echo "./geth_linux --config ./config.toml --datadir ./mainnet --cache 100000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 --ws --syncmode=full --snapshot=false --diffsync" >  /home/geth/start.sh
 chmod +x /home/geth/start.sh
 
 # Download the latest mainnet config.
