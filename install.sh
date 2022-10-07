@@ -14,8 +14,8 @@ apt update
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
-nvm install 17
-npm install pm2 --location=global
+nvm install node
+npm i --location=global pm2
 
 # Download unzip.
 echo "Installing unzip..."
@@ -41,14 +41,14 @@ wget -O /home/geth/mainnet.zip https://github.com/binance-chain/bsc/releases/lat
 
 # Unzip mainnet
 echo "Unzipping mainnet.zip..."
-unzip /home/geth/mainnet.zip
+unzip /home/geth/mainnet.zip -d /home/geth
 
 # Initialize the geth. 
 echo "Initializing the geth..."
 /home/geth/geth_linux --datadir mainnet init genesis.json
 
 # Setup systemd
-echo "Initializing systemd..."
+echo "Setting systemd..."
 echo "[Unit]" >> /lib/systemd/system/geth.service
 echo "Description=BSC Full Node" >> /lib/systemd/system/geth.service
 echo "" >> /lib/systemd/system/geth.service
@@ -66,8 +66,8 @@ echo "WantedBy=default.target" >> /lib/systemd/system/geth.service
 chown -R geth.geth /home/geth/*
 systemctl enable geth
 
-# Download the util scripts.
-echo "Downloading the utility scripts..."
+# Setting the util scripts.
+echo "Setting the utility scripts..."
 echo "./geth_linux attach http://localhost:8545 --exec eth.syncing" > /home/geth/check_sync.sh
 chmod +x /home/geth/check_sync.sh
 echo "tail -f /home/geth/mainnet/bsc.log" > /home/geth/show_logs.sh
