@@ -45,7 +45,7 @@ unzip /home/geth/mainnet.zip -d /home/geth
 
 # Initialize the geth. 
 echo "Initializing the geth..."
-/home/geth/geth_linux --datadir mainnet init genesis.json
+/home/geth/geth_linux --datadir mainnet init /home/geth/genesis.json
 
 # Setup systemd
 echo "Setting systemd..."
