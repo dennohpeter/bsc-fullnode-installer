@@ -40,7 +40,7 @@ echo "Downloading the latest BSC mainnet config..."
 wget -O /home/geth/mainnet.zip https://github.com/binance-chain/bsc/releases/latest/download/mainnet.zip
 
 # Unzip mainnet
-echo "Downloading the latest BSC mainnet config..."
+echo "Unzipping mainnet.zip..."
 unzip /home/geth/mainnet.zip
 
 # Initialize the geth. 
