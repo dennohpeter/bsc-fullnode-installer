@@ -68,11 +68,11 @@ systemctl enable geth
 echo "Setting the utility scripts..."
 echo "./geth_linux attach http://localhost:8545 --exec eth.syncing" > /home/geth/check_sync.sh
 chmod +x /home/geth/check_sync.sh
-echo "tail -f /home/geth/mainnet/bsc.log" > /home/geth/show_logs.sh
+echo "tail -f /home/geth/node/bsc.log" > /home/geth/show_logs.sh
 chmod +x /home/geth/show_logs.sh
 echo "systemctl stop geth" >> /home/geth/prune.sh
-echo "./geth_linux snapshot prune-state --datadir ./mainnet" >> /home/geth/prune.sh
-echo "chown -R geth.geth ./mainnet" >> /home/geth/prune.sh
+echo "./geth_linux snapshot prune-state --datadir ./node" >> /home/geth/prune.sh
+echo "chown -R geth.geth ./node" >> /home/geth/prune.sh
 echo "systemctl start geth" >> /home/geth/prune.sh
 chmod +x /home/geth/prune.sh
 
