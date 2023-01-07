@@ -43,9 +43,7 @@ wget -O /home/geth/mainnet.zip https://github.com/binance-chain/bsc/releases/lat
 echo "Unzipping mainnet.zip..."
 unzip /home/geth/mainnet.zip -d /home/geth
 
-# Initialize the geth. 
-echo "Initializing the geth..."
-/home/geth/geth_linux --datadir mainnet init /home/geth/genesis.json
+# Setup snapshot
 
 # Setup systemd
 echo "Setting systemd..."
