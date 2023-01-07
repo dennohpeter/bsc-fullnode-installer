@@ -31,7 +31,7 @@ wget -O /home/geth/geth_linux https://github.com/binance-chain/bsc/releases/late
 chmod +x /home/geth/geth_linux
 
 # Create the start.sh.
-echo "./geth_linux --config ./config.toml --datadir ./mainnet --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none
+echo "./geth_linux --config ./config.toml --datadir ./mainnet --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none" > /home/geth/start.sh
 
 chmod +x /home/geth/start.sh
 
